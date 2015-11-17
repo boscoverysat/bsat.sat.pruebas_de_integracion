@@ -1,6 +1,12 @@
 import processing.serial.*;
 Serial tty;
 
+PImage img1;
+PImage img2;
+PImage img3;
+
+PShape cubesat;
+
 int backgroundColor = 255;
 int packets = 0;
 int lost = 0;
@@ -39,6 +45,10 @@ void setup() {
   //TTY Config
   //tty = new Serial(this, Serial.list()[4], 9600);
   
+  img1 = loadImage("img1.jpg");
+  img2 = loadImage("img2.png");
+  img3 = loadImage("img3.jpeg");
+  
   //Main Window
   size(1000, 600);
   surface.setTitle("BoscoverySAT - Telemetry Panel v0.1");
@@ -47,17 +57,25 @@ void setup() {
   //Divider Line
   stroke(0);
   strokeWeight(2);
-  line(0, 30, width, 30);                                                                             //Change Here
+  line(width/2, 30, width, 30);                                                                             //Change Here
   line(width/2, height, width/2, 0);                                                                  //Change Here
   
+  line(0, 120, width/2, 120);
+  
+  line(0, 150, width/2, 150);
+  
   //Below Divider
-  line(width/2, height - 30, width, height - 30);                                                     //Change Here
+  line(0, height - 30, width, height - 30);                                                     //Change Here
+  fill(48, 139, 209);
+  textSize(15);
+  String createBy = "Developed by: Boscovery SAT Team";
+  text(createBy, ((width/2)/2) - textWidth(createBy)/2, height - 8);
   
   //3D CubeSAT
   fill(0);
   textSize(20);
   String titlePanel1 = "3D Rendering of CubeSAT:";
-  text(titlePanel1, ((width/2)/2) - textWidth(titlePanel1)/2, 20);                                    //Change Here
+  text(titlePanel1, ((width/2)/2) - textWidth(titlePanel1)/2, 142);                                    //Change Here
   
   //Telemetry
   fill(0);
@@ -96,11 +114,19 @@ void setup() {
   //Packets Divider
   line(width/2 + (width/2)/2, height - 30, width/2 + (width/2)/2, height);                           //Change Here
   
+  image(img1, 5, 5);
+  image(img2, 220, 10);
+  image(img3, 350, 10);
+  
+  cubesat = loadShape("cubesat.obj");
+  
 }
 
 int i = 0;
       
-void draw() {  
+void draw() { 
+  
+  //image(img2, );
   //String data;
   
   //while (tty.available() > 0){
@@ -235,6 +261,11 @@ void draw() {
     packets++;
     delay(1000);
     i++;
+    
+    fill(0);
+    stroke(0);
+    rect(3, 155, width/2 - 5, height - 35);
+    //shape(cubesat, 150, 0);
      
 }
   
