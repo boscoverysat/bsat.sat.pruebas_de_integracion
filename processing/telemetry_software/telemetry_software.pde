@@ -104,8 +104,12 @@ void draw() {
   
   String data;
   
+  print("Puerto de recepción: " + tty.available() + " ");
+  
   if (tty.available() > 0){
      data = tty.readStringUntil(13);
+     
+     print("Data: " + data + "\n");
      
      if(data != null){
      
@@ -114,6 +118,7 @@ void draw() {
        String[] dataSplit = split(data, ";");
        //int temperature = 20;//getTemperature( int(dataSplit[5]) );
        
+       print();
       
       /*if(i + 1 > testing.length){
         i = 0; 
