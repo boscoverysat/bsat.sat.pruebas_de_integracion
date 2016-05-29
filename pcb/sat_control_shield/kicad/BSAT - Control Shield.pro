@@ -1,4 +1,4 @@
-update=jueves, 26 '26e' mayo '26e' 2016, 18:50:19
+update=lun 30 may 2016 00:23:43 WEST
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,13 +23,11 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
-[general]
-version=1
 [eeschema]
 version=1
-LibDir=
+LibDir=../../kicad-bsat-lib
 [eeschema/libraries]
-LibName1=/Volumes/Data/Salesianos/BoscoveryLab/BoscoverySAT/repository/satelite/bsat.sat.pruebas_de_integracion/pcb/kicad-bsat-lib/boscoverysat
+LibName1=boscoverysat
 LibName2=power
 LibName3=device
 LibName4=transistors
@@ -59,3 +57,15 @@ LibName27=opto
 LibName28=atmel
 LibName29=contrib
 LibName30=valves
+[general]
+version=1
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=Pcbnew
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=79
