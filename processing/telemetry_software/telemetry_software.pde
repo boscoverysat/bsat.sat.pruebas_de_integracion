@@ -106,7 +106,7 @@ void draw() {
   
   if (tty.available() > 0){
      data = tty.readStringUntil(13);
-     
+    
      if(data != null){
      
         println(data);
