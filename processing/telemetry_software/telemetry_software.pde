@@ -104,9 +104,13 @@ void draw() {
   
   String data;
   
+  print("Puerto de recepción: " + tty.available() + " ");
+  
   if (tty.available() > 0){
      data = tty.readStringUntil(13);
-    
+     
+     print("Data: " + data + "\n");
+     
      if(data != null){
      
         println(data);
